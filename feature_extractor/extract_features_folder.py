@@ -44,3 +44,15 @@ def extract_features(wav_path, sr=22050):
 
     return features
 
+df = pd.DataFrame()
+for comp_type in os.listdir("C:\\Users\\sanid\\PycharmProjects\\Listen\\components"):
+    for comp_type_id in os.listdir(f"C:\\Users\\sanid\\PycharmProjects\\Listen\\components\\{comp_type}"):
+        for comp_type_id_state in os.listdir(f"C:\\Users\\sanid\\PycharmProjects\\Listen\\valve\\{comp_type}\\{comp_type_id}"):
+            for filename in os.listdir(f"C:\\Users\\sanid\\PycharmProjects\\Listen\\valve\\{comp_type}\\{comp_type_id}\\{comp_type_id_state}"):
+                features = extract_features(f"C:\\Users\\sanid\\PycharmProjects\\Listen\\valve\\{comp_type}\\{comp_type_id}\\{comp_type_id_state}\\{filename}")
+                df_features = pd.DataFrame([features])
+                df = pd.concat([df, df_features], ignore_index=True)
+                print("Done with ", filename)
+            print(f"Done with {comp_type_id}")
+            df.to_csv(f"{comp_type}_{comp_type_id}_{comp_type_id_state}", index=False)
+
