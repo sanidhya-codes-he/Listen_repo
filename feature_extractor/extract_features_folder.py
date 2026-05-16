@@ -44,12 +44,3 @@ def extract_features(wav_path, sr=22050):
 
     return features
 
-df = pd.DataFrame()
-for filename in os.listdir("C:\\Users\\sanid\\PycharmProjects\\Listen\\fan\\id_06\\normal"):
-    features = extract_features(f"C:\\Users\\sanid\\PycharmProjects\\Listen\\fan\\id_06\\normal\\{filename}")
-    df_features = pd.DataFrame([features])
-    df = pd.concat([df, df_features], ignore_index=True)
-    print("Done with ",filename)
-
-df.to_csv("fan_id06_normal", index=False)
-
