@@ -53,4 +53,5 @@ fan['comp_id'] = 3
 
 data = pd.concat([valve,slider,pump,fan],ignore_index=True)
 
+data.to_csv("allComp_data.csv",index=False)
 
