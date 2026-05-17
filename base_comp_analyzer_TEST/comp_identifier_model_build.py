@@ -7,6 +7,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report
 
+
+
+
 X = data.drop('comp_id', axis=1)
 y = data['comp_id']
 
