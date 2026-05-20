@@ -9,10 +9,10 @@ N_MELS = 128
 FIXED_WIDTH = 313
 
 INPUT_DIRS = [
-    BASE_DIR / "slider/id_00",
-    BASE_DIR / "slider/id_02",
-    BASE_DIR / "slider/id_04",
-    BASE_DIR / "slider/id_06",
+    BASE_DIR / "feature_extraction/raw_data/slider/id_00",
+    BASE_DIR / "feature_extraction/raw_data/slider/id_02",
+    BASE_DIR / "feature_extraction/raw_data/slider/id_04",
+    BASE_DIR / "feature_extraction/raw_data/slider/id_06",
 ]
 OUTPUT_DIRS = [
     BASE_DIR / "processed_features/slider/id_00",
